@@ -1,0 +1,296 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x831AEB92831AEB92",
+      "device": "xc7z020clg400-1",
+      "gen_directory": "../../../../lab0.gen/sources_1/bd/full_adder",
+      "name": "full_adder",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2022.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "FA": {
+        "or2_0": "",
+        "HA": {
+          "and2_0": "",
+          "xor2_0": ""
+        },
+        "HA1": {
+          "and2_0": "",
+          "xor2_0": ""
+        }
+      }
+    },
+    "ports": {
+      "a": {
+        "direction": "I"
+      },
+      "b": {
+        "direction": "I"
+      },
+      "c_out": {
+        "direction": "O"
+      },
+      "sum": {
+        "direction": "O"
+      },
+      "c_in": {
+        "direction": "I"
+      }
+    },
+    "components": {
+      "FA": {
+        "ports": {
+          "c_out": {
+            "direction": "O"
+          },
+          "a": {
+            "direction": "I"
+          },
+          "b": {
+            "direction": "I"
+          },
+          "c_in": {
+            "direction": "I"
+          },
+          "sum": {
+            "direction": "O"
+          }
+        },
+        "components": {
+          "or2_0": {
+            "vlnv": "xilinx.com:xup:xup_or2:1.0",
+            "xci_name": "full_adder_xup_or2_0_1",
+            "xci_path": "ip\\full_adder_xup_or2_0_1\\full_adder_xup_or2_0_1.xci",
+            "inst_hier_path": "FA/or2_0",
+            "parameters": {
+              "DELAY": {
+                "value": "0"
+              }
+            }
+          },
+          "HA": {
+            "ports": {
+              "a": {
+                "direction": "I"
+              },
+              "b": {
+                "direction": "I"
+              },
+              "carry": {
+                "direction": "O"
+              },
+              "sum": {
+                "direction": "O"
+              }
+            },
+            "components": {
+              "and2_0": {
+                "vlnv": "xilinx.com:xup:xup_and2:1.0",
+                "xci_name": "full_adder_xup_and2_0_0",
+                "xci_path": "ip\\full_adder_xup_and2_0_0\\full_adder_xup_and2_0_0.xci",
+                "inst_hier_path": "FA/HA/and2_0",
+                "parameters": {
+                  "DELAY": {
+                    "value": "0"
+                  }
+                }
+              },
+              "xor2_0": {
+                "vlnv": "xilinx.com:xup:xup_xor2:1.0",
+                "xci_name": "full_adder_xup_xor2_0_0",
+                "xci_path": "ip\\full_adder_xup_xor2_0_0\\full_adder_xup_xor2_0_0.xci",
+                "inst_hier_path": "FA/HA/xor2_0",
+                "parameters": {
+                  "DELAY": {
+                    "value": "0"
+                  }
+                }
+              }
+            },
+            "nets": {
+              "a_1": {
+                "ports": [
+                  "a",
+                  "xor2_0/a",
+                  "and2_0/a"
+                ]
+              },
+              "b_1": {
+                "ports": [
+                  "b",
+                  "xor2_0/b",
+                  "and2_0/b"
+                ]
+              },
+              "xup_and2_0_y": {
+                "ports": [
+                  "and2_0/y",
+                  "carry"
+                ]
+              },
+              "xup_xor2_0_y": {
+                "ports": [
+                  "xor2_0/y",
+                  "sum"
+                ]
+              }
+            }
+          },
+          "HA1": {
+            "ports": {
+              "a": {
+                "direction": "I"
+              },
+              "b": {
+                "direction": "I"
+              },
+              "carry": {
+                "direction": "O"
+              },
+              "sum": {
+                "direction": "O"
+              }
+            },
+            "components": {
+              "and2_0": {
+                "vlnv": "xilinx.com:xup:xup_and2:1.0",
+                "xci_name": "full_adder_and2_0_1",
+                "xci_path": "ip\\full_adder_and2_0_1\\full_adder_and2_0_1.xci",
+                "inst_hier_path": "FA/HA1/and2_0",
+                "parameters": {
+                  "DELAY": {
+                    "value": "0"
+                  }
+                }
+              },
+              "xor2_0": {
+                "vlnv": "xilinx.com:xup:xup_xor2:1.0",
+                "xci_name": "full_adder_xor2_0_1",
+                "xci_path": "ip\\full_adder_xor2_0_1\\full_adder_xor2_0_1.xci",
+                "inst_hier_path": "FA/HA1/xor2_0",
+                "parameters": {
+                  "DELAY": {
+                    "value": "0"
+                  }
+                }
+              }
+            },
+            "nets": {
+              "a_1": {
+                "ports": [
+                  "a",
+                  "xor2_0/a",
+                  "and2_0/a"
+                ]
+              },
+              "b_1": {
+                "ports": [
+                  "b",
+                  "xor2_0/b",
+                  "and2_0/b"
+                ]
+              },
+              "xup_and2_0_y": {
+                "ports": [
+                  "and2_0/y",
+                  "carry"
+                ]
+              },
+              "xup_xor2_0_y": {
+                "ports": [
+                  "xor2_0/y",
+                  "sum"
+                ]
+              }
+            }
+          }
+        },
+        "nets": {
+          "HA1_carry": {
+            "ports": [
+              "HA1/carry",
+              "or2_0/b"
+            ]
+          },
+          "HA1_sum": {
+            "ports": [
+              "HA1/sum",
+              "sum"
+            ]
+          },
+          "HA_carry": {
+            "ports": [
+              "HA/carry",
+              "or2_0/a"
+            ]
+          },
+          "HA_sum": {
+            "ports": [
+              "HA/sum",
+              "HA1/a"
+            ]
+          },
+          "a_1": {
+            "ports": [
+              "a",
+              "HA/a"
+            ]
+          },
+          "b_1": {
+            "ports": [
+              "b",
+              "HA/b"
+            ]
+          },
+          "b_2": {
+            "ports": [
+              "c_in",
+              "HA1/b"
+            ]
+          },
+          "or2_0_y": {
+            "ports": [
+              "or2_0/y",
+              "c_out"
+            ]
+          }
+        }
+      }
+    },
+    "nets": {
+      "HA1_sum": {
+        "ports": [
+          "FA/sum",
+          "sum"
+        ]
+      },
+      "a_1": {
+        "ports": [
+          "a",
+          "FA/a"
+        ]
+      },
+      "b_1": {
+        "ports": [
+          "b",
+          "FA/b"
+        ]
+      },
+      "b_2": {
+        "ports": [
+          "c_in",
+          "FA/c_in"
+        ]
+      },
+      "or2_0_y": {
+        "ports": [
+          "FA/c_out",
+          "c_out"
+        ]
+      }
+    }
+  }
+}
